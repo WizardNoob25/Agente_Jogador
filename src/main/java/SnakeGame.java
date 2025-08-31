@@ -59,6 +59,7 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        Toolkit.getDefaultToolkit().sync();
         draw(g);
     }
 
