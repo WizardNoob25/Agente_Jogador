@@ -98,6 +98,7 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
         else {
             g.drawString("Score: " + String.valueOf(snakeBody.size()), tileSize - 16, tileSize);
         }
+        Toolkit.getDefaultToolkit().sync();
     }
 
     public void placeFood(){
@@ -151,11 +152,17 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
 
     @Override
     public void actionPerformed(ActionEvent e) { //called every x milliseconds by gameLoop timer
-        move();
         repaint();
         if (gameOver) {
-            gameLoop.stop();
+            //gameLoop.stop();
+
+            snakeBody.clear();
+            snakeHead.x = random.nextInt(boardWidth/tileSize);
+            snakeHead.y = random.nextInt(boardHeight/tileSize);
+            gameLoop.restart();
+            gameOver = false;
         }
+        move();
     }
 
     @Override
