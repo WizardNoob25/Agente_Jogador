@@ -140,8 +140,8 @@ public class SnakeGame extends JPanel implements ActionListener, KeyListener {
             }
         }
 
-        if (snakeHead.x*tileSize < 0 || snakeHead.x*tileSize > boardWidth || //passed left border or right border
-                snakeHead.y*tileSize < 0 || snakeHead.y*tileSize > boardHeight ) { //passed top border or bottom border
+        if (snakeHead.x*tileSize < 0 || snakeHead.x*tileSize > (boardWidth - 1) || //passed left border or right border
+                snakeHead.y*tileSize < 0 || snakeHead.y*tileSize > (boardHeight - 1) ) { //passed top border or bottom border
             gameOver = true;
         }
     }
