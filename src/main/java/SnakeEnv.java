@@ -16,9 +16,9 @@ public class SnakeEnv {
 
     private static final double COLLISION_PENALTY = -12.0;
     private static final double FOOD_REWARD = 2.0;
-    private static final double STEP_PENALTY = -0.3;
+    private static final double STEP_PENALTY = -0.25;
     private static final double TAIL_PENALTY = -0.3;
-    private static final double STARVATION_PENALTY = -10.0;
+    private static final double STARVATION_PENALTY = -15.0;
 
     public SnakeEnv(int width, int height) {
         this.width = width;
@@ -91,9 +91,12 @@ public class SnakeEnv {
 
     private Dir getIntendedDir(Action action) {
         switch (action) {
-            case LEFT: return turnLeft(dir);
-            case RIGHT: return turnRight(dir);
-            default: return dir;
+            case LEFT:
+                return turnLeft(dir);
+            case RIGHT:
+                return turnRight(dir);
+            default:
+                return dir;
         }
     }
 

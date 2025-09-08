@@ -5,7 +5,7 @@ public class Main {
         final String qTableFile = "qtable.ser";
         final int trainingEpisodes = 50_000;
         final int playGames = 1000;
-        final int guiDelayMs = 90;
+        final int guiDelayMs = 1;
 
         try {
             SnakeEnv env = new SnakeEnv(boardSize, boardSize);
